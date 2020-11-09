@@ -2,4 +2,4 @@
 
 ## 读书笔记
 
-### * [Java高性权威指南](#notes/Java高性权威指南.md)
+### * [Java高性权威指南](/notes/Java高性权威指南.md)
