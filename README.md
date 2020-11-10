@@ -1,7 +1,7 @@
 # Contents  
 - [读书笔记](#读书笔记)  
 - [Demo](#Demo)  
-- [Design idea and innovation point](#design-idea-and-innovation-point)  
+- [基础只](#design-idea-and-innovation-point)  
   - [Background](#background) 
   - [Design inspirations](#design-inspirations) 
   - [Innovation point](#innovation-point)  
@@ -12,6 +12,8 @@
 * [Java高性权威指南](/notes/Java高性权威指南.md)
 
 
-## Demo
+## 运维篇
+
+* [一篇文章帮你详细了解如何安装jdk](/base/jdkInstall.md)
 
 - 
