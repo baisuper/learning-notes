@@ -2,7 +2,7 @@
 本文主要讲解如何在Linux服务器安装JDK，主要分为两个部分，第一部讲解如何在服务器在线或离线安装jdk，第二部分为扩展阅读，主要是希望帮助大家补全平时经常遇到但是没有去深入了解的的一些知识点。
 
 - [在线安装](#在线安装)  
-  - [Centos yum快速安装](#Centos yum快速安装)  
+  - [Centos快速安装](#Centos快速安装)  
 - [离线安装](#离线安装) 
 - [扩展内容](#扩展内容)  
   - [Jdk的不同提供商](#Jdk的不同提供商) 
@@ -11,7 +11,7 @@
   - [Developmental vision](#developmental-vision) 
 
 # 在线安装
-## Centos yum快速安装
+## Centos快速安装
 在服务器上如何快速安装jdk，如果
 ### yum安装java
 
