@@ -12,10 +12,8 @@
 
 # 在线安装
 ## Centos快速安装
-在服务器上如何快速安装jdk，如果
-### yum安装java
 
-***安装jdk***
+***yum安装jdk***
 
 ```shell
 sudo yum install java-1.8.0-openjdk.x86_64
@@ -27,6 +25,7 @@ sudo yum install java-1.8.0-openjdk-devel
 ```shell
 java -version
 ```
+java -version 展示内容详解可以看下方的[扩展内容](#java -version详解)。
 
 # 离线安装 
 
