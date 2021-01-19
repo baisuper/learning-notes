@@ -25,7 +25,7 @@ sudo yum install java-1.8.0-openjdk-devel
 ```shell
 java -version
 ```
-java -version 展示内容详解可以看下方的[扩展内容](#java -version详解)。
+java -version 展示内容详解可以看下方的扩展内容。
 
 # 离线安装 
 
@@ -38,7 +38,7 @@ java -version 展示内容详解可以看下方的[扩展内容](#java -version�
 
 下载完成后通过ftp工具上传到服务器，执行以下命令进行安装，看好自己选择的下载文件类型
 
-`后缀名为.tar.gz运行如下命令,如jdk-8u171-linux-x64.tar.gz`
+- 后缀名为.tar.gz运行如下命令，如:jdk-8u171-Linux-X64.tar.gz
 ```shell
 # 将上传后的文件放到想存放jdk的目录后，将文件解压
 tar -zxvf jdk-8u171-linux-x64.tar.gz
@@ -47,8 +47,12 @@ tar -zxvf jdk-8u171-linux-x64.tar.gz
 cd jdk1.8.0_171
 
 # 配置环境变量
-vi /etc/profile
-# 添加如下内容到的文件最末尾
+# 修改JAVA_HOME为真实目录
+echo 'export JAVA_HOME=/jdk1.8.0_171' >> /etc/profile
+echo 'export JRE_HOME=/${JAVA_HOME}/jre' >> /etc/profile
+echo 'export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib' >> /etc/profile
+echo 'export PATH=/${JAVA_HOME}/bin:$PATH' >> /etc/profile
+
 export JAVA_HOME=/jdk1.8.0_171
 export JRE_HOME=${JAVA_HOME}/jre
 export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
@@ -57,19 +61,13 @@ export PATH=${JAVA_HOME}/bin:$PATH
 source /etc/profile
 ```
 
-`后缀名为.rpm的执行rpm安装命令`
+- 后缀名为.rpm的执行rpm安装命令
 
 <!-- todo -->
 
 # 扩展内容
 
-### Jdk的不同提供商
-
-OpenJdk其实有很多的提供商，比如Oracle，IBM，Adopt等等，不同的提供商提供的jdk也有少许差异，部分提供商的jdk只是为了运行在自己的服务器商更流畅，比如IBM的，同时不同的提供商提供的jdk的开放程度也不同，下面列举了一些常见的Openjdk版本和差异。
-
-<!-- todo 列表 -->
-
-### yum源中的文件都是什么
+### yum源中的文件都是什么文件
 
 ***查看yum列表***
 
@@ -84,7 +82,7 @@ yum list java*
 
 ------------
 
-### OpenJDK
+### OpenJDK的众多提供商有什么区别
 目前JDK主要有JDK和OpenJDK，而OpenJDK又包含了很多家厂商，所以有些小伙本可能在选择JDK的时候会有疑问，这么多JDK到底有什么区别？又应该选择哪一个版本，看完这一段希望能让小伙伴们找到答案。  
 Java最早由Sun Microsystems发布于1995年5月23日，1996年1月JDK1.0诞生，在2006年JavaOne大会上Sun称将对Java开放源代码，于2009年4月15日正式发布OpenJDK（Oracle在2010年收购Sun Microsystem之后接管了这个项目)，从此大量的OpenJDK版本开始出现。  
 下面罗列了一些常见厂商的OpenJDK的资料，会不断更新，希望对大家游有用：
@@ -106,7 +104,7 @@ Java最早由Sun Microsystems发布于1995年5月23日，1996年1月JDK1.0诞生
 ------------
 
 
-### 离线安装如何选择Oracle官网的jdk下载文件
+### Oracle官网jdk那么多下载文件，该如何选择
 [官方](https://www.oracle.com/java/technologies/javase-downloads.html)提供的下载有多个下载文件，如果不熟悉的人可能会很蒙，到底要下哪个文件，这里我给大家说下具体该如何选择，以JDK8为例，下图是所有官方提供的下载文件，通过文件名和平台的来区分，首先对几个名称做一下解释：  
 
 -  .tar.gz/tar.Z：源代码压缩文件
@@ -144,20 +142,22 @@ Java最早由Sun Microsystems发布于1995年5月23日，1996年1月JDK1.0诞生
 ### Jdk的环境变量有那些，如何设置
 
 ### JDK和JRE有啥区别
-简单来说：JDK包含JRE，JDK面向开发者，JRE面向使用者。  
+简单来说：JDK包含JRE，JDK面向开发者，JRE面向使用者。
 
 - JRE(Java Runtime Enviroment)：顾名思义，JRE提供的Java运行时所需的软件支持。
 - JDK(Java Development Kit): JDK拥有JRE所拥有的一切，还有编译器（javac）和工具（如javadoc和jdb）。它能够创建和编译程序。
 
 如果只是为了运行一下Java程序的话，那么只需要安装JRE就可以了。如果你需要进行一些Java编程方面的工作，那么你就需要安装JDK了。
-### 多个版本的JDK如何管理
+### Java EE(J2EE)/Java SE(J2SE)的区别
 
-### java -version详解
+### java -version命令详解
+![](https://oscimg.oschina.net/oscnet/up-bb73d5d4c91f786feadc1958d1e7f2d87f7.png) 
 
-### jdk卸载
+TM:trade mark，商标
 
+![](https://oscimg.oschina.net/oscnet/up-ef82fc602042ef773bafb32ac499ad77638.png)
+###  Java小版本详解
 
-### JAVA历史
 
 
 参考资料：  
@@ -165,3 +165,6 @@ https://blog.adoptopenjdk.net/2020/06/adoptopenjdk-to-join-the-eclipse-foundatio
 https://adoptopenjdk.net/support.html#roadmap  
 http://www.360doc.com/content/20/1111/15/31905426_945300170.shtml  
 https://docs.oracle.com/cd/E19455-01/805-6331/6j5vgg66j/index.html
+http://www-evasion.imag.fr/Membres/Francois.Faure/enseignement/ressources/java/jdk1.3/guide/performance/hotspot.html
+https://docs.oracle.com/javase/8/docs/technotes/guides/vm/server-class.html
+https://wiki.jikexueyuan.com/project/jvm-parameter/types-and-compiler.html
